@@ -1,0 +1,180 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #FFDEE9, #B5FFFC);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #fff;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border: 4px solid #333;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.05);
+}
+
+.cell.x {
+    color: #42a5f5;
+    text-shadow: 2px 2px #82b1ff;
+}
+
+.cell.o {
+    color: #ff4081;
+    text-shadow: 2px 2px #ff80ab;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b59b6;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #8e44ad;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    font-size: 2rem;
+    color: #8e44ad;
+    border-radius: 10px;
+}
+
+#closePopupButton {
+    margin-top: 10px;
+    background-color: #8e44ad;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#difficultyPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#difficultyPopup button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#difficultyPopup button:hover {
+    background-color: #9b59b6;
+}
+
+/* Media queries for mobile responsiveness */
+
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px); /* Smaller grid cells */
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem; /* Smaller font for mobile */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust header size for smaller screens */
+    }
+
+    button {
+        padding: 8px 16px; /* Smaller button size for mobile */
+        font-size: 1rem;
+    }
+
+    #difficultyPopup {
+        width: 90%; /* Popup takes 90% of the screen width */
+        padding: 15px;
+    }
+
+    .popup {
+        width: 90%; /* Popup content adjusts width */
+    }
+}
+
+/* For very small screens (like portrait phones) */
+@media (max-width: 400px) {
+    .game-board {
+        grid-template-columns: repeat(3, 70px); /* Further decrease the size */
+        grid-template-rows: repeat(3, 70px);
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}

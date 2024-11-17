@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p class="developer-text">Developed By Mahadev</p>
+    <h1>Tic Tac Toe</h1>
+
+    <!-- Mode selection buttons -->
+    <div id="mode-selection">
+        <button id="player-vs-player">Play with Player</button>
+        <button id="player-vs-ai">Play with AI</button>
+    </div>
+
+    <!-- AI Difficulty selection popup -->
+    <div id="difficulty-popup" style="display: none;">
+        <button id="easy">Easy</button>
+        <button id="hard">Hard</button>
+        <button id="impossible">Impossible</button>
+    </div>
+
+    <div class="game-board" id="board" style="display: none;">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    
+    <div class="popup" id="popup">
+        <div id="popup-content"></div>
+        <button id="closePopupButton">Close</button>
+    </div>
+    <button id="restartButton" style="display: none;">Restart Game</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
